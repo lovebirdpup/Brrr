@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>💕cuddles&snuggles</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h3 {
+      text-align: center;
+    }
+
+    .set-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    .question-container {
+      display: flex;
+      flex-direction: column;
+      margin: 0 20px;
+    }
+
+    h3 {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+    }
+
+    input[type="checkbox"] {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 5px 0 0;
+    }
+
+    .scores-container {
+      position: fixed;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  
+    ...
+  }
+    }
+  </style>
+</head>
+<body>
+<h1>Gender traits</h1>
+<div class="set-container">
+<div class="question-container">
+<h3>Feminine Items</h3>
+<label><input type="checkbox" name="s1q1" value="1"> Affectionate💖</label>
+<label><input type="checkbox" name="s1q1" value="1"> Empathetic🤗</label>
+<label><input type="checkbox" name="s1q1" value="1"> Compassionate🫂</label>
+<label><input type="checkbox" name="s1q1" value="1"> Nurturing👩‍🍼</label>
+<label><input type="checkbox" name="s1q1" value="1"> Subby🐕</label>
+<label><input type="checkbox" name="s1q1" value="1"> Delicate🌸</label>
+<label><input type="checkbox" name="s1q1" value="1"> Gentle🌺</label>
+<label><input type="checkbox" name="s1q1" value="1"> Sensitive💔</label>
+<label><input type="checkbox" name="s1q1" value="1"> Loving❤️</label>
+<label><input type="checkbox" name="s1q1" value="1"> Peaceful🕊️</label>
+<label><input type="checkbox" name="s1q1" value="1"> Supportive👫</label>
+<label><input type="checkbox" name="s1q1" value="1"> Clingy🤭</label>
+<label><input type="checkbox" name="s1q1" value="1"> Passive🤷️</label>
+<label><input type="checkbox" name="s1q1" value="1"> Passive aggressive😶</label>
+<label><input type="checkbox" name="s1q1" value="1"> Flatterable🥰</label>
+<label><input type="checkbox" name="s1q1" value="1"> Soft🧸</label>
+<label><input type="checkbox" name="s1q1" value="1"> Timid😳</label>
+<label><input type="checkbox" name="s1q1" value="1"> Sincere💕</label>
+<label><input type="checkbox" name="s1q1" value="1"> Overly dependent🤲</label>
+<label><input type="checkbox" name="s1q1" value="1"> Does self-care🧖️</label>
+</div>
+
+<div class="question-container">
+<h3>Masculine Items</h3>
+  <label><input type="checkbox" name="s2q1" value="1"> Aggressive🔥</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Forceful💥</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Competitive🥇</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Acts as a leader👨‍✈️</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Emotionally detached😶</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Conventional🔲</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Decisive✅</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Dismissive❌</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Dominant👨‍⚖️</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Arrogant🙄</label>
+<label><input type="checkbox" name="s2q1" value="1"> Reckless 🤪</label>
+<label><input type="checkbox" name="s2q1" value="1"> Bold💪</label>
+<label><input type="checkbox" name="s2q1" value="1"> Firm😐</label>
+<label><input type="checkbox" name="s2q1" value="1"> Imposing🤴</label>
+<label><input type="checkbox" name="s2q1" value="1"> Overly confident😎</label>
+<label><input type="checkbox" name="s2q1" value="1"> Rough😏</label>
+<label><input type="checkbox" name="s2q1" value="1"> Makes decisions easily🤔</label>
+<label><input type="checkbox" name="s2q1" value="1"> Blunt 💁️</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Fear of Vulnerability🤐</label>
+  <label><input type="checkbox" name="s2q1" value="1"> Entitled🥇</label>
+<div class="scores-container">
+<p>Girly pop: <span id="feminine-score">0</span></p>
+<p>Boyish boy: <span id="masculine-score">0</span></p>
+<p> <span id="feminine-result"></span></p>
+<p> <span id="masculine-result"></span></p>
+</div>
+
+<script>
+  function updateScores() {
+    const feminineScore = document.querySelectorAll('input[name="s1q1"]:checked').length;
+    const masculineScore = document.querySelectorAll('input[name="s2q1"]:checked').length;
+
+    document.getElementById('feminine-score').textContent = feminineScore;
+    document.getElementById('masculine-score').textContent = masculineScore;
+
+    if (feminineScore === 0) {
+      document.getElementById('feminine-result').textContent = "";
+    } else if (feminineScore >= 7 && feminineScore <= 9) {
+  document.getElementById('feminine-result').textContent = "Femboy🥚";
+} else if (feminineScore >= 10 && feminineScore <= 13) {
+  document.getElementById('feminine-result').textContent = "Girrrl👧";
+} else if (feminineScore >= 14 && feminineScore <= 17) {
+  document.getElementById('feminine-result').textContent = "Proper woman💃";
+} else if (feminineScore >= 18 && feminineScore <= 18) {
+  document.getElementById('feminine-result').textContent = "Hyperfem girly girl🎀";
+} else if (feminineScore >= 19 && feminineScore <= 19) {
+  document.getElementById('feminine-result').textContent = "Bad bitch💋";
+} else if (feminineScore >= 20) {
+  document.getElementById('feminine-result').textContent = "Bad bitch w/ issues💄💅🪒";
+}
+
+
+    if (masculineScore === 0) {
+      document.getElementById('masculine-result').textContent = "";
+    } else if (masculineScore >= 7 && masculineScore <= 11) {
+    document.getElementById('masculine-result').textContent = "Tomboyish gap🧑";
+    } else if (masculineScore >= 12 && masculineScore <= 14) {
+    document.getElementById('masculine-result').textContent = "Masc girl👩‍💼";
+   } else if (masculineScore >= 15&& masculineScore <= 18) {
+      document.getElementById('masculine-result').textContent = "No (boooooo *throws🍅)";
+ } else if (masculineScore >= 19&& masculineScore <= 19) {
+      document.getElementById('masculine-result').textContent = "(*throws rotten🍅🍅🍅)";
+ } else if (masculineScore >= 20) {
+      document.getElementById('masculine-result').textContent = "(*throws 🔪) ";
+    }
+  }
+
+  document.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+    input.addEventListener('change', updateScores);
+  });
+</script>
+
+
+</div>
+</body>
+</html>
+
